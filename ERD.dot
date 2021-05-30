@@ -1,0 +1,41 @@
+digraph ER {
+    // General config
+        layout=dot
+        nodesep = "1"
+        ranksep = "1"
+        edge [labelfontsize = 16 labeldistance = 1.5]
+
+        label = "Entity Relation Diagram\n\n"
+        labelloc=top
+        fontsize=20
+        pad = 0.5
+
+    // Entities
+        node [shape=box]
+        BBB
+        Round
+        Pool
+        Brother
+        User
+        Vote
+
+    // Relations
+        node [shape=diamond style=filled fillcolor=lightgrey]
+        "Pool Presence"
+
+        // one to one
+            edge [arrowhead = none]
+
+        // one to many
+            edge [taillabel = "1" headlabel = "n"]
+            BBB -> Round
+            BBB -> Brother
+            
+            Brother -> "Pool Presence"
+            Pool -> "Pool Presence"
+
+            "Pool Presence" -> Vote
+            
+            Round -> Pool
+            User -> Vote
+}
