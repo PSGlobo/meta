@@ -20,7 +20,7 @@ digraph ER {
         Vote
 
     // Relations
-        node [shape=diamond style=filled fillcolor=lightgrey]
+        node [style=filled fillcolor=lightgrey]
         "Pool Presence"
 
         // one to one
@@ -29,7 +29,8 @@ digraph ER {
         // one to many
             edge [taillabel = "1" headlabel = "n"]
             BBB -> Round
-            BBB -> Brother
+            BBB -> Participation
+            Brother -> Participation
             
             Brother -> "Pool Presence"
             Pool -> "Pool Presence"
