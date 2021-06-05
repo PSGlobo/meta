@@ -16,8 +16,6 @@ digraph ER {
         Round
         Pool
         Brother
-        User
-        Vote
 
     // Relations
         node [style=filled fillcolor=lightgrey]
@@ -34,9 +32,6 @@ digraph ER {
             
             Brother -> "Pool Presence"
             Pool -> "Pool Presence"
-
-            "Pool Presence" -> Vote
             
             Round -> Pool
-            User -> Vote
 }
